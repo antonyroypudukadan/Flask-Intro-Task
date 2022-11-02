@@ -23,7 +23,7 @@ def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = request.args.get('token')
-        g.token = token
+        # g.token = token
         f = b.find_one({'btoken': token})
         # try:
         if not f:
